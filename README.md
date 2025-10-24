@@ -19,7 +19,7 @@ Currently in Portugal the study is in most cases null
 Reports directly to the client in 7 days (add more)
 
 - Clean and structured reports
-- Great math aplied (probablities)
+- Great math aplied (probabilities)
 
 ---
 
