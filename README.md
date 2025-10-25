@@ -1,6 +1,6 @@
 # SoLuX The Startup ☀️ 📊
 
-**Tagline:** We at SoLuX ... (continue to-do)
+**Tagline:** We at SoLuX make the client happy... (continue to-do)
 
 ---
 
