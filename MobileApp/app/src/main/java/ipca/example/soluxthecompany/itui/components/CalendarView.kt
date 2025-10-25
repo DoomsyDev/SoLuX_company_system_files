@@ -70,7 +70,7 @@ fun CalendarView(
 @Composable
 fun DayCell(day: String, isToday: Boolean) {
     val backgroundColor =
-        if (isToday) Color(0xFF007AFF) else Color.Transparent
+        if (isToday) Color(0x7C0E0D0D) else Color.Transparent
     val textColor =
         if (day.isEmpty()) Color.Transparent else if (isToday) Color.White else Color.LightGray
 
