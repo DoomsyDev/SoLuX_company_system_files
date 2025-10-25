@@ -9,7 +9,8 @@ import ipca.example.soluxthecompany.itui.LoginScreen
 import ipca.example.soluxthecompany.itui.LoginViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.material3.Text
-
+import ipca.example.soluxthecompany.itui.HomeScreen
+import ipca.example.soluxthecompany.itui.HomeViewModel
 @Composable
 fun AppNavigation() {
     val navController: NavHostController = rememberNavController()
@@ -24,7 +25,8 @@ fun AppNavigation() {
         }
 
         composable("home") {
-            Text("Bem-vindo à Home Screen!")
+            val homeViewModel: HomeViewModel = viewModel()
+            HomeScreen(viewModel = homeViewModel)
         }
     }
 }

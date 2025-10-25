@@ -3,6 +3,9 @@ package ipca.example.soluxthecompany.itui
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+// Adicionar estes imports para a funcionalidade de scroll
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
@@ -37,12 +40,11 @@ fun LoginScreen(
         }
     }
 
-    // Gradiente grafite com mais contraste e brilho metálico
     val gradientBackground = Brush.verticalGradient(
         colors = listOf(
-            Color(0xFF3C3C3C), // cinza escuro prateado
-            Color(0xFF1C1C1C), // quase preto
-            Color(0xFF000000)  // preto total
+            Color(0xFF3C3C3C),
+            Color(0xFF1C1C1C),
+            Color(0xFF000000)
         )
     )
 
@@ -51,14 +53,18 @@ fun LoginScreen(
             .fillMaxSize()
             .background(gradientBackground)
             .padding(horizontal = 24.dp),
-        contentAlignment = Alignment.TopCenter
+        // Alterado para 'Center' para melhor visualização em ecrãs maiores
+        contentAlignment = Alignment.Center
     ) {
+        // Criar o estado de scroll
+        val scrollState = rememberScrollState()
+
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(20.dp),
+            // A Column agora pode rolar verticalmente
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 60.dp)
+                .verticalScroll(scrollState)
         ) {
             // LOGO
             Image(
@@ -77,6 +83,8 @@ fun LoginScreen(
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(top = 8.dp)
             )
+
+            Spacer(modifier = Modifier.height(20.dp))
 
             // CAMPO DE EMAIL
             OutlinedTextField(
@@ -97,6 +105,8 @@ fun LoginScreen(
                 ),
                 modifier = Modifier.fillMaxWidth()
             )
+
+            Spacer(modifier = Modifier.height(16.dp))
 
             // CAMPO DE PASSWORD
             OutlinedTextField(
@@ -119,13 +129,14 @@ fun LoginScreen(
                 modifier = Modifier.fillMaxWidth()
             )
 
+            Spacer(modifier = Modifier.height(20.dp))
+
             // BOTÃO DE LOGIN
             Button(
                 onClick = { viewModel.onLoginClick() },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(56.dp)
-                    .padding(top = 8.dp),
+                    .height(56.dp),
                 shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
                 contentPadding = PaddingValues()
@@ -135,9 +146,9 @@ fun LoginScreen(
                         .background(
                             Brush.horizontalGradient(
                                 colors = listOf(
-                                    Color(0xFF777777), // prata claro
-                                    Color(0xFF3A3A3A), // grafite
-                                    Color(0xFF1F1F1F)  // preto
+                                    Color(0xFF777777),
+                                    Color(0xFF3A3A3A),
+                                    Color(0xFF1F1F1F)
                                 )
                             ),
                             shape = RoundedCornerShape(20.dp)
@@ -154,12 +165,15 @@ fun LoginScreen(
                 }
             }
 
+            Spacer(modifier = Modifier.height(16.dp))
+
             // MENSAGEM DE ERRO
             error?.let {
                 Text(
                     text = it,
                     color = Color(0xFFFF6B6B),
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.height(24.dp) // Garante espaço para o erro
                 )
             }
         }
