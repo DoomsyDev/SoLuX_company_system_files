@@ -53,20 +53,16 @@ fun LoginScreen(
             .fillMaxSize()
             .background(gradientBackground)
             .padding(horizontal = 24.dp),
-        // Alterado para 'Center' para melhor visualização em ecrãs maiores
         contentAlignment = Alignment.Center
     ) {
-        // Criar o estado de scroll
         val scrollState = rememberScrollState()
 
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            // A Column agora pode rolar verticalmente
             modifier = Modifier
                 .fillMaxWidth()
                 .verticalScroll(scrollState)
         ) {
-            // LOGO
             Image(
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = "Logo SoLuX",
@@ -75,7 +71,6 @@ fun LoginScreen(
                     .align(Alignment.CenterHorizontally)
             )
 
-            // TÍTULO
             Text(
                 text = "Bem-vindo à SoLuX!",
                 color = Color.White,
@@ -86,7 +81,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // CAMPO DE EMAIL
             OutlinedTextField(
                 value = login.email,
                 onValueChange = { viewModel.onEmailChange(it) },
@@ -108,7 +102,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // CAMPO DE PASSWORD
             OutlinedTextField(
                 value = login.password,
                 onValueChange = { viewModel.onPasswordChange(it) },
@@ -131,7 +124,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // BOTÃO DE LOGIN
             Button(
                 onClick = { viewModel.onLoginClick() },
                 modifier = Modifier
@@ -167,7 +159,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // MENSAGEM DE ERRO
             error?.let {
                 Text(
                     text = it,

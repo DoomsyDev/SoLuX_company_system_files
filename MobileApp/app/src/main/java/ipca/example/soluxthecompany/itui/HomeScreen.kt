@@ -3,6 +3,7 @@ package ipca.example.soluxthecompany.itui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
@@ -84,6 +85,13 @@ fun BottomNavigationBar() {
             onClick = { /* TODO */ },
             icon = { Icon(Icons.Default.Home, contentDescription = "Home", tint = Color.White) },
             label = { Text("Home", color = Color.White) }
+        )
+
+        NavigationBarItem(
+            selected = false,
+            onClick = { /* TODO */ },
+            icon = { Icon(Icons.Default.Add, contentDescription = "Criar", tint = Color.White) },
+            label = { Text("Criar", color = Color.White) }
         )
 
         NavigationBarItem(
