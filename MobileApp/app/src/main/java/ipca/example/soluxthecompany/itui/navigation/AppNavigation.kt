@@ -3,6 +3,8 @@ package ipca.example.soluxthecompany.itui.navigation
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ExitToApp
@@ -94,6 +96,32 @@ fun AppNavigation() {
                         }
                     },
                     icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
+                    colors = drawerItemColors,
+                    modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
+                )
+
+                NavigationDrawerItem(
+                    label = { Text(text = "Criar") },
+                    selected = currentRoute == "criar",
+                    onClick = {
+                        scope.launch { drawerState.close() }
+                        // Descomente quando o ecrã 'criar' for criado
+                        // navController.navigate("criar") { launchSingleTop = true }
+                    },
+                    icon = { Icon(Icons.Default.Add, contentDescription = "criar") },
+                    colors = drawerItemColors,
+                    modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
+                )
+
+                NavigationDrawerItem(
+                    label = { Text(text = "Agenda") },
+                    selected = currentRoute == "agenda",
+                    onClick = {
+                        scope.launch { drawerState.close() }
+                        // Descomente quando o ecrã 'agenda' for criado
+                        // navController.navigate("agenda") { launchSingleTop = true }
+                    },
+                    icon = { Icon(Icons.Default.DateRange, contentDescription = "Agenda") },
                     colors = drawerItemColors,
                     modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
                 )
