@@ -33,6 +33,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import ipca.example.soluxthecompany.itui.CriarScreen
+import ipca.example.soluxthecompany.itui.CriarViewModel
 import ipca.example.soluxthecompany.itui.HomeScreen
 import ipca.example.soluxthecompany.itui.HomeViewModel
 import ipca.example.soluxthecompany.itui.LoginScreen
@@ -105,10 +107,10 @@ fun AppNavigation() {
                     selected = currentRoute == "criar",
                     onClick = {
                         scope.launch { drawerState.close() }
-                        // Descomente quando o ecrã 'criar' for criado
-                        // navController.navigate("criar") { launchSingleTop = true }
+                        // Modificado para navegar para a nova rota
+                        navController.navigate("criar") { launchSingleTop = true }
                     },
-                    icon = { Icon(Icons.Default.Add, contentDescription = "criar") },
+                    icon = { Icon(Icons.Default.Add, contentDescription = "Criar") },
                     colors = drawerItemColors,
                     modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
                 )
@@ -166,13 +168,35 @@ fun AppNavigation() {
                 )
             }
 
+
             composable("home") {
                 HomeScreen(
                     viewModel = viewModel<HomeViewModel>(),
-                    onMenuClick = { scope.launch { drawerState.open() } }
+                    // Ações da barra superior e menu
+                    onMenuClick = { scope.launch { drawerState.open() } },
+                    // Ações da barra inferior
+                    onHomeClick = {
+                    },
+                    onCriarClick = {
+                        navController.navigate("criar") {
+                            launchSingleTop = true
+                        }
+                    },
+                    onAgendaClick = {
+                        // navController.navigate("agenda")
+                    },
+                    onSettingsClick = {
+                        // navController.navigate("settings")
+                    }
                 )
             }
-            // composable("settings") { /* O seu ecrã de definições */ }
+            //seccao criar
+            composable("criar") {
+                CriarScreen(
+                    viewModel = viewModel<CriarViewModel>(),
+                    onNavigateBack = { navController.popBackStack() }
+                )
+            }
         }
     }
 }

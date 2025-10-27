@@ -29,7 +29,11 @@ import java.util.Calendar
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel,
-    onMenuClick: () -> Unit = {}
+    onMenuClick: () -> Unit,
+    onHomeClick: () -> Unit,
+    onCriarClick: () -> Unit,
+    onAgendaClick: () -> Unit,
+    onSettingsClick: () -> Unit
 ) {
     val gradientBackground = Brush.verticalGradient(
         colors = listOf(
@@ -45,7 +49,6 @@ fun HomeScreen(
             LaunchedEffect(Unit) {
                 while (true) {
                     currentTime = Calendar.getInstance()
-                    //1 segundo
                     delay(1000)
                 }
             }
@@ -60,7 +63,6 @@ fun HomeScreen(
                 },
                 actions = {
                     Text(
-                        //ver isto amarelo, mas não é urgente porque já está a funcionar
                         text = String.format(
                             "%02d:%02d",
                             currentTime.get(Calendar.HOUR_OF_DAY),
@@ -84,7 +86,15 @@ fun HomeScreen(
                 )
             )
         },
-        bottomBar = { BottomNavigationBar() },
+        // Passe as funções de clique para o BottomNavigationBar
+        bottomBar = {
+            BottomNavigationBar(
+                onHomeClick = onHomeClick,
+                onCriarClick = onCriarClick,
+                onAgendaClick = onAgendaClick,
+                onSettingsClick = onSettingsClick
+            )
+        },
         containerColor = Color.Transparent
     ) { paddingValues ->
         Box(
@@ -105,32 +115,39 @@ fun HomeScreen(
 }
 
 @Composable
-fun BottomNavigationBar() {
+fun BottomNavigationBar(
+    // Receber as funções de clique como parâmetros
+    onHomeClick: () -> Unit,
+    onCriarClick: () -> Unit,
+    onAgendaClick: () -> Unit,
+    onSettingsClick: () -> Unit
+) {
     NavigationBar(containerColor = Color(0xFF1C1C1C)) {
         NavigationBarItem(
-            selected = true,
-            onClick = { /* TODO */ },
+            selected = true, // Lógica de seleção a ser melhorada depois
+            onClick = onHomeClick,
             icon = { Icon(Icons.Default.Home, contentDescription = "Home", tint = Color.White) },
             label = { Text("Home", color = Color.White) }
         )
 
         NavigationBarItem(
             selected = false,
-            onClick = { /* TODO */ },
+            // Use a função recebida no onClick
+            onClick = onCriarClick,
             icon = { Icon(Icons.Default.Add, contentDescription = "Criar", tint = Color.White) },
             label = { Text("Criar", color = Color.White) }
         )
 
         NavigationBarItem(
             selected = false,
-            onClick = { /* TODO */ },
+            onClick = onAgendaClick,
             icon = { Icon(Icons.Filled.DateRange, contentDescription = "Agenda", tint = Color.White) },
             label = { Text("Agenda", color = Color.White) }
         )
 
         NavigationBarItem(
             selected = false,
-            onClick = { /* TODO */ },
+            onClick = onSettingsClick,
             icon = { Icon(Icons.Default.Settings, contentDescription = "Configurações", tint = Color.White) },
             label = { Text("Definições", color = Color.White) }
         )
