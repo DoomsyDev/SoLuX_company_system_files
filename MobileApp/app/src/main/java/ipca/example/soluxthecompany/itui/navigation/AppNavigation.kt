@@ -68,7 +68,7 @@ fun AppNavigation() {
                     .background(
                         Brush.verticalGradient(
                             colors = listOf(
-                                Color(0xFF2B2B2B), 
+                                Color(0xFF2B2B2B),
                                 Color(0xFF1A1A1A)
                             )
                         )

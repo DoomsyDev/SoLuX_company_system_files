@@ -38,9 +38,21 @@ fun HomeScreen(
             TopAppBar(
                 title = {
                     Text(
-                        "SoLuX The Startup",
+                        "SoLuX",
                         color = Color.White,
                         fontSize = 20.sp
+                    )
+                },
+                actions = {
+                    //isto esta estatico, ou seja eu tenho de colocar a dar refresh de 5 em 5 segundos
+                    Text(
+                        text = String.format(
+                            "%02d:%02d",
+                            viewModel.currentDate.get(Calendar.HOUR_OF_DAY),
+                            viewModel.currentDate.get(Calendar.MINUTE)
+                        ),
+                        color = Color.White,
+                        fontSize = 20.sp,
                     )
                 },
                 navigationIcon = {
