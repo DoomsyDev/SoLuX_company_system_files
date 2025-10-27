@@ -10,6 +10,11 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -17,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ipca.example.soluxthecompany.itui.components.CalendarView
+import kotlinx.coroutines.delay
 import java.util.Calendar
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,6 +41,15 @@ fun HomeScreen(
 
     Scaffold(
         topBar = {
+            var currentTime by remember { mutableStateOf(Calendar.getInstance()) }
+            LaunchedEffect(Unit) {
+                while (true) {
+                    currentTime = Calendar.getInstance()
+                    //1 segundo
+                    delay(1000)
+                }
+            }
+
             TopAppBar(
                 title = {
                     Text(
@@ -44,12 +59,12 @@ fun HomeScreen(
                     )
                 },
                 actions = {
-                    //isto esta estatico, ou seja eu tenho de colocar a dar refresh de 5 em 5 segundos
                     Text(
+                        //ver isto amarelo, mas não é urgente porque já está a funcionar
                         text = String.format(
                             "%02d:%02d",
-                            viewModel.currentDate.get(Calendar.HOUR_OF_DAY),
-                            viewModel.currentDate.get(Calendar.MINUTE)
+                            currentTime.get(Calendar.HOUR_OF_DAY),
+                            currentTime.get(Calendar.MINUTE)
                         ),
                         color = Color.White,
                         fontSize = 20.sp,
