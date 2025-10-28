@@ -190,6 +190,7 @@ fun AppNavigation() {
                     }
                 )
             }
+
             //seccao criar
             composable("criar") {
                 CriarScreen(
