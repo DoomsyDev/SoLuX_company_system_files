@@ -56,7 +56,7 @@ fun HomeScreen(
             TopAppBar(
                 title = {
                     Text(
-                        "SoLuX The Startup",
+                        "SoLuX | Company System",
                         color = Color.White,
                         fontSize = 20.sp
                     )
