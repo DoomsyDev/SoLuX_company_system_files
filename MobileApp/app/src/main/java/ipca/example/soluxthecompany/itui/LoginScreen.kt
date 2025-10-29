@@ -64,11 +64,11 @@ fun LoginScreen(
                 .verticalScroll(scrollState)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.logo),
+                painter = painterResource(id = R.drawable.solux_merch),
                 contentDescription = "Logo SoLuX",
                 modifier = Modifier
                     .size(180.dp)
-                    .align(Alignment.CenterHorizontally)
+                    .offset(y = (-30).dp)
             )
 
             Text(
