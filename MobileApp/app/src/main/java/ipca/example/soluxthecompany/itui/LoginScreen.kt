@@ -65,7 +65,7 @@ fun LoginScreen(
         ) {
             Image(
                 painter = painterResource(id = R.drawable.solux_merch),
-                contentDescription = "Logo SoLuX",
+                contentDescription = "Logo da SoLuX",
                 modifier = Modifier
                     .size(180.dp)
                     .offset(y = (-30).dp)
