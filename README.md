@@ -1,6 +1,6 @@
 # SoLuX The Startup
 
-**Tagline:** We at SoLuX make the client happy... (continue to-do)
+**Tagline:** We at SoLuX make the client always happy... (continue to-do)
 
 ---
 
