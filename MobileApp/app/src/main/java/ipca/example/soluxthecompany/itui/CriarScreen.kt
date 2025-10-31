@@ -121,7 +121,7 @@ fun CriarScreen(
             OutlinedTextField(
                 value = state.device,
                 onValueChange = viewModel::onDeviceChange,
-                label = { Text("Device (ex: Sensor #63)") },
+                label = { Text("Aparelho (ex: '#1, #2, #3')") },
                 modifier = Modifier.fillMaxWidth(),
                 colors = textFieldColors,
                 singleLine = true
@@ -131,7 +131,7 @@ fun CriarScreen(
             OutlinedTextField(
                 value = state.sampling,
                 onValueChange = viewModel::onSamplingChange,
-                label = { Text("Sampling (intervalo em min)") },
+                label = { Text("Intervalo de leitura (em segundos)") },
                 modifier = Modifier.fillMaxWidth(),
                 colors = textFieldColors,
                 singleLine = true
