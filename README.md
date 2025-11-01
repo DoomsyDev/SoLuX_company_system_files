@@ -66,7 +66,7 @@ Database: MySQL (Terminal Instance)
 
 ## Contacts
 
-- **Email:** CreateEmail@domain.com  
+- **Email:** CreateEmail1@domain.com  
 - **Website:** www.itdoesnotexistyet.com
 
 ---
