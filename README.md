@@ -69,4 +69,6 @@ Database: MySQL (Terminal Instance)
 - **Email:** CreateEmail@domain.com  
 - **Website:** www.itdoesnotexistyet.com
 
+---
+
 ## ❤️ Built by people, for people.
