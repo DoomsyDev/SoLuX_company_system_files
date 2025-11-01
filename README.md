@@ -1,54 +1,74 @@
-# SoLuX The Startup
+# ☀️ SoLuX — The Startup
 
-**Tagline:** We at SoLuX make the client always happy... (continue to-do)
+**Tagline:** At SoLuX, we make our clients shine as bright as the sun.
 
 ---
 
 ## Overview
 
-> Example: We make studies for the implementation of solar panels in a specific area (you make better ruben hehehe fix later).
+At SoLuX, we specialize in conducting feasibility studies for the installation of solar panels in specific locations.  
+Our goal is simple: help people and businesses make informed, sustainable, and profitable energy decisions.
 
 ---
 
-## Problem
-Currently in Portugal the study is in most cases null
+## The Problem
+
+In Portugal, proper analysis and studies for solar panel implementation are often overlooked or poorly executed — leading to inefficient systems and wasted investments.
 
 ---
 
-## Solution
-Reports directly to the client in 7 days (add more)
+## The Solution
 
-- Clean and structured reports
-- Great math aplied (probabilities)
+We deliver **accurate, data-driven solar reports** directly to our clients — fast, clear, and easy to understand.
+
+- Delivery within **7 days**  
+- Clean, well-structured technical reports  
+- Advanced **mathematical modeling** and **probability analysis**  
+- Realistic recommendations tailored to each client’s location
 
 ---
 
 ## Target Market
-Small and larger businesses, particulars
-Whoever needs solar panels
+
+Our services are designed for:  
+- Small and large businesses  
+- Private property owners  
+- Anyone interested in transitioning to solar energy
+
+If you’re considering solar, we’ve got you covered.
+
+---
+
+## Vision & Mission
+
+**Vision:** Be a trusted partner in Portugal for the transition to clean, affordable solar energy.  
+**Mission:** Provide fast, reliable, and actionable solar feasibility studies that enable smarter investments and sustainable outcomes.
 
 ---
 
 ## Business Model
-We make money with selling studies, later we can evolve to implement those solar panels
+
+We start by offering **paid feasibility studies** for solar panel implementation.  
+In the future, SoLuX aims to **expand into full project execution** — from design to installation.
 
 ---
 
-## Technology
+## Technology Stack
 
 ```bash
-Frontend: React in visual studio code
-Backend: .NET Core in visual studio code
-MobileApp: Kotlin in android studio 
-Database: MySQL in terminal instance
+Frontend: React (Visual Studio Code)
+Backend: .NET Core (Visual Studio Code)
+Mobile App: Kotlin (Android Studio)
+Database: MySQL (Terminal Instance)
 ```
 
 ---
 
 ## Contacts
-Email: CreateEmail@domain.com
-Website: www.itdoesnotexistyet.com
+
+- **Email:** CreateEmail@domain.com  
+- **Website:** www.itdoesnotexistyet.com
 
 ---
 
-## Built by people for people ❤️
+## ❤️ Built by people, for people.
