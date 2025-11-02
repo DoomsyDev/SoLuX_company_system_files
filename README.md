@@ -71,4 +71,4 @@ Database: MySQL (Terminal Instance)
 
 ---
 
-## ❤️ Built by people, for people.
+❤️ Built by people, for people.
