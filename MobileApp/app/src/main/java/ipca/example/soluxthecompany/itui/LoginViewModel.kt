@@ -51,13 +51,13 @@ class LoginViewModel : ViewModel() {
                     val exception = task.exception
                     when (exception) {
                         is FirebaseAuthInvalidUserException -> {
-                            loginError = "Não existe uma conta com este email."
+                            loginError = "Não existe uma conta com o email indicado."
                         }
                         is FirebaseAuthInvalidCredentialsException -> {
                             loginError = "A password está incorreta."
                         }
                         is FirebaseNetworkException -> {
-                            loginError = "Erro de rede. Verifique a sua ligação à internet."
+                            loginError = "Erro de rede."
                         }
                         else -> {
                             loginError = "Email ou password inválidos."
