@@ -1,4 +1,4 @@
-# ☀️ SoLuX -> The Startup
+# ☀️ SoLuX - The Startup
 
 **Tagline:** At SoLuX, we make our clients shine as bright as the sun.
 
