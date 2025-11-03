@@ -82,7 +82,7 @@ fun CriarScreen(
                 OutlinedTextField(
                     value = state.dataImplementacao,
                     onValueChange = viewModel::onDataImplementacaoChange,
-                    label = { Text("Data Início") },
+                    label = { Text("Data Inicial") },
                     modifier = Modifier.weight(1f),
                     colors = textFieldColors,
                     singleLine = true
@@ -90,7 +90,7 @@ fun CriarScreen(
                 OutlinedTextField(
                     value = state.dataLevantamento,
                     onValueChange = viewModel::onDataLevantamentoChange,
-                    label = { Text("Data Fim") },
+                    label = { Text("Data Final") },
                     modifier = Modifier.weight(1f),
                     colors = textFieldColors,
                     singleLine = true
