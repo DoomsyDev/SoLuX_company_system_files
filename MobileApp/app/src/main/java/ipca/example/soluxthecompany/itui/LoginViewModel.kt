@@ -4,6 +4,12 @@ import androidx.lifecycle.ViewModel
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import com.google.firebase.FirebaseNetworkException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import ipca.example.soluxthecompany.data.Login
 
 class LoginViewModel : ViewModel() {
@@ -17,6 +23,8 @@ class LoginViewModel : ViewModel() {
     var isLoggedIn by mutableStateOf(false)
         private set
 
+    private val auth: FirebaseAuth = Firebase.auth
+
     fun onEmailChange(newEmail: String) {
         loginState = loginState.copy(email = newEmail)
     }
@@ -26,13 +34,39 @@ class LoginViewModel : ViewModel() {
     }
 
     fun onLoginClick() {
-        if (loginState.email == "admin@solux.com" && loginState.password == "1234") {
-            loginError = null
-            isLoggedIn = true
-        } else {
-            loginError = "Credenciais inválidas"
-            isLoggedIn = false
+        if (loginState.email.isBlank() || loginState.password.isBlank()) {
+            // Login falhou pelos campos estarem vazios
+            loginError = "Email e password não podem estar vazios."
+            return
         }
+
+        auth.signInWithEmailAndPassword(loginState.email.trim(), loginState.password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Login bem-sucedido
+                    loginError = null
+                    isLoggedIn = true
+                } else {
+                    // Login falhou
+                    val exception = task.exception
+                    when (exception) {
+                        is FirebaseAuthInvalidUserException -> {
+                            loginError = "Não existe uma conta com este email."
+                        }
+                        is FirebaseAuthInvalidCredentialsException -> {
+                            loginError = "A password está incorreta."
+                        }
+                        is FirebaseNetworkException -> {
+                            loginError = "Erro de rede. Verifique a sua ligação à internet."
+                        }
+                        else -> {
+                            loginError = "Email ou password inválidos."
+                            println("Firebase Auth Error: ${exception?.localizedMessage}")
+                        }
+                    }
+                    isLoggedIn = false
+                }
+            }
     }
 
     fun loginReset() {

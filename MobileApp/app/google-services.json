@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "259986883929",
+    "project_id": "solux-adaf4",
+    "storage_bucket": "solux-adaf4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259986883929:android:2f2001fd6f56316f9bf848",
+        "android_client_info": {
+          "package_name": "ipca.example.soluxthecompany"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCliCGIHdLdIM4yexsqw6nww41Gbib4520"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
