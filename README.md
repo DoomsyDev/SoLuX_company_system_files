@@ -66,7 +66,7 @@ Database: MySQL (Terminal Instance)
 
 ## Contacts
 
-- **Email:** CreateEmail1@domain.com  
+- **Email:** ru.borgs@gmail.com  
 - **Website:** www.itdoesnotexistyet.com
 
 ❤️ Built by people, for people.
