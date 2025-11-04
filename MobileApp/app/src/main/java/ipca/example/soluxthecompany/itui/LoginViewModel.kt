@@ -60,7 +60,7 @@ class LoginViewModel : ViewModel() {
                             loginError = "Erro de rede."
                         }
                         else -> {
-                            loginError = "Email ou pass inválidos."
+                            loginError = "Email ou password inválidos."
                             println("Firebase Auth Error: ${exception?.localizedMessage}")
                         }
                     }
