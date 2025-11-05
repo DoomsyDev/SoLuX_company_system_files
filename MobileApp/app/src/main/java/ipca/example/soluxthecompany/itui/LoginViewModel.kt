@@ -54,7 +54,7 @@ class LoginViewModel : ViewModel() {
                             loginError = "Não existe uma conta com o email indicado."
                         }
                         is FirebaseAuthInvalidCredentialsException -> {
-                            loginError = "A password está incorreta."
+                            loginError = "A password está incorret."
                         }
                         is FirebaseNetworkException -> {
                             loginError = "Erro de rede."
