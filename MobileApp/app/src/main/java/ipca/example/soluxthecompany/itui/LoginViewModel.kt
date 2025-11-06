@@ -61,7 +61,7 @@ class LoginViewModel : ViewModel() {
                         }
                         else -> {
                             loginError = "Email ou password inválidos."
-                            println("Firebase Auth Error: ${exception?.localizedMessage}")
+                            println("Firebase Auh Error: ${exception?.localizedMessage}")
                         }
                     }
                     isLoggedIn = false
