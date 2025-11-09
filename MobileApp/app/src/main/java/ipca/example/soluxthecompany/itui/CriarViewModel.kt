@@ -43,7 +43,7 @@ class CriarViewModel : ViewModel() {
     }
 
     fun onCriarClick() {
-        // TODO: Adicionar aqui a lóica para guardar os dados
+        // TODO: Adicionar aqui a lógica para guardar os dados
         // ex: enviar para uma base de dados, API, etc.
         println("A criar terreno: $terrenoState")
     }
