@@ -103,7 +103,7 @@ fun AppNavigation() {
                 )
 
                 NavigationDrawerItem(
-                    label = { Text(text = "Cria") },
+                    label = { Text(text = "Criar") },
                     selected = currentRoute == "criar",
                     onClick = {
                         scope.launch { drawerState.close() }
